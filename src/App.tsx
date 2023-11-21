@@ -10,7 +10,7 @@ function App() {
     colorTheme === 'light' ? setColorTheme('dark') : setColorTheme('light');
 
   const theme = { ...TCtheme };
-  theme.color = colorTheme === 'light' ? lightPalette : darkPalette;
+  theme.colors = colorTheme === 'light' ? lightPalette : darkPalette;
   return (
     <>
       <ThemeProvider theme={theme}>
