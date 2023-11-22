@@ -3,6 +3,7 @@ import GlobalStyle from './GlobalStyle';
 import { TCtheme } from './styles/theme';
 import { darkPalette, lightPalette } from './styles/colors';
 import { useState } from 'react';
+import Layout from './layouts/Layout';
 
 function App() {
   const [colorTheme, setColorTheme] = useState('light');
@@ -12,11 +13,10 @@ function App() {
   const theme = { ...TCtheme };
   theme.color = colorTheme === 'light' ? lightPalette : darkPalette;
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Layout />
+    </ThemeProvider>
   );
 }
 
