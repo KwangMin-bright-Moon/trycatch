@@ -1,3 +1,6 @@
+import { TCFont } from './fonts';
+
 export const TCtheme = {
-  color: {},
+  colors: {},
+  fonts: TCFont,
 };
