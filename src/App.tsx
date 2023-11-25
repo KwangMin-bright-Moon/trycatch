@@ -1,22 +1,21 @@
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
 import { TCtheme } from './styles/theme';
-import { darkPalette, lightPalette } from './styles/colors';
+
+import Layout from './layouts/Layout';
+import { DarkModeProvider } from './contexts/DarkModeContext';
 import { useState } from 'react';
 
 function App() {
-  const [colorTheme, setColorTheme] = useState('light');
-  const onChangeColorTheme = () =>
-    colorTheme === 'light' ? setColorTheme('dark') : setColorTheme('light');
+  const [theme, setTheme] = useState({ ...TCtheme });
 
-  const theme = { ...TCtheme };
-  theme.colors = colorTheme === 'light' ? lightPalette : darkPalette;
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <DarkModeProvider>
+        <Layout setTheme={setTheme} />
+      </DarkModeProvider>
+    </ThemeProvider>
   );
 }
 

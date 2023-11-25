@@ -54,6 +54,34 @@ table {
   border-spacing: 0;
 }
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background: wheat;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  background-color: var(--color-bg-dark);
+  overflow: hidden;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 5px 5px 21px 4px rgba(0, 0, 0, 0.45);
+  box-shadow: 5px 5px 21px 4px rgba(0, 0, 0, 0.45);
+}
 `;
 
 export default GlobalStyle;
