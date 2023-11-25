@@ -13,6 +13,7 @@ export const TCLightPalette = {
   black: '#0000FF',
   silver: '#0000FF',
   background: '#f8f8f8',
+  content: '#1a1a1a',
 };
 
 export const TCDarkPalette = {
@@ -30,4 +31,5 @@ export const TCDarkPalette = {
   black: '#0000FF',
   silver: '#0000FF',
   background: '#1a1a1a',
+  content: '#f8f8f8',
 };

@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+import { FaMoon } from 'react-icons/fa';
+import { MdOutlineWbSunny } from 'react-icons/md';
+import { GiHamburgerMenu } from 'react-icons/gi';
+
 import { DefaultTheme } from 'styled-components/dist/types';
 import { TCtheme } from '../styles/theme';
 import { TCDarkPalette, TCLightPalette } from '../styles/colors';
@@ -26,8 +30,12 @@ export default function Header({ setTheme }: Props) {
     <Wrapper>
       <Title>TryCatch</Title>
       <div>
-        <button onClick={handleClick}>다크모드</button>
-        <button>옵션</button>
+        <Button onClick={handleClick}>
+          {darkMode ? <MdOutlineWbSunny /> : <FaMoon />}
+        </Button>
+        <Button $isLast>
+          <GiHamburgerMenu />
+        </Button>
       </div>
     </Wrapper>
   );
@@ -45,9 +53,14 @@ const Wrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 40px 30px;
+  color: ${(props) => props.theme.colors.content};
 `;
 
 const Title = styled.h1`
   font-size: ${(props) => props.theme.fonts.medium};
   font-weight: ${(props) => props.theme.fonts.bold};
+`;
+
+const Button = styled.button<{ $isLast?: boolean }>`
+  margin-right: ${(props) => (props.$isLast ? '0' : '1rem')};
 `;

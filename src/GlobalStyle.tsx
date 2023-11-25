@@ -81,7 +81,6 @@ body {
   flex-direction: column;
   -webkit-box-shadow: 5px 5px 21px 4px rgba(0, 0, 0, 0.45);
   box-shadow: 5px 5px 21px 4px rgba(0, 0, 0, 0.45);
-  background-color:#f2f3f5
 }
 `;
 
