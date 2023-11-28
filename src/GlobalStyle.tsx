@@ -67,20 +67,22 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  background: wheat;
+  background-color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.content};
+  transition: background-color 0.5s, color 0.5s;
+
 }
 
 #root {
   width: 100%;
   height: 100%;
   max-width: 500px;
-  background-color: var(--color-bg-dark);
   overflow: hidden;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  -webkit-box-shadow: 5px 5px 21px 4px rgba(0, 0, 0, 0.45);
-  box-shadow: 5px 5px 21px 4px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: ${(props) => props.theme.colors.webkitBoxShadow};
+  box-shadow: ${(props) => props.theme.colors.boxShadow};
 }
 `;
 

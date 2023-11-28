@@ -11,8 +11,8 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
       <DarkModeProvider>
+        <GlobalStyle />
         <Layout setTheme={setTheme} />
       </DarkModeProvider>
     </ThemeProvider>

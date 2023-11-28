@@ -4,7 +4,6 @@ import { MdOutlineWbSunny } from 'react-icons/md';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 import { DefaultTheme } from 'styled-components/dist/types';
-import { TCtheme } from '../styles/theme';
 import { TCDarkPalette, TCLightPalette } from '../styles/colors';
 import { useDarkMode } from '../contexts/DarkModeContext';
 import { useEffect } from 'react';
@@ -17,9 +16,10 @@ export default function Header({ setTheme }: Props) {
   const { darkMode, toggleDarkMode } = useDarkMode();
 
   useEffect(() => {
-    const themeCopy = { ...TCtheme };
-    themeCopy.colors = darkMode ? TCDarkPalette : TCLightPalette;
-    setTheme(themeCopy);
+    setTheme((prev) => ({
+      ...prev,
+      colors: darkMode ? TCDarkPalette : TCLightPalette,
+    }));
   }, [darkMode, setTheme]);
 
   const handleClick = () => {
@@ -47,8 +47,6 @@ const Wrapper = styled.header`
   width: 100%;
   z-index: 1000;
   height: 5rem;
-  background-color: ${(props) => props.theme.colors.background};
-  transition: background-color 0.5s, color 0.5s;
   display: flex;
   justify-content: space-between;
   align-items: center;

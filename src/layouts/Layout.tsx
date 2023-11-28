@@ -8,13 +8,15 @@ type Props = {
 
 export default function Layout({ setTheme }: Props) {
   return (
-    <Wrapper>
+    <Wrapper className='main'>
       <Header setTheme={setTheme} />
-      <main></main>
+      <Main></Main>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
+const Wrapper = styled.div``;
+
+const Main = styled.main`
+  height: 100vh;
 `;

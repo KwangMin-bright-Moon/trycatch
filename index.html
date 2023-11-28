@@ -4,6 +4,39 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript">
+      (function () {
+        function checkIsDarkMode() {
+          const isClient = typeof window !== 'undefined';
+          if (isClient) {
+            const persistedColorPreference =
+              window.localStorage.getItem('theme');
+
+            if (persistedColorPreference) {
+              return persistedColorPreference === 'dark';
+            }
+
+            const systemPreference = window.matchMedia(
+              '(prefers-color-scheme: dark)'
+            );
+            if (systemPreference.matches) {
+              return true;
+            }
+            return false;
+          }
+        }
+        const isDarkMode = checkIsDarkMode();
+        document.documentElement.style.setProperty(
+          'background-color',
+          isDarkMode === false ? '#f8f8f8' : '#1a1a1a'
+        );
+
+        document.documentElement.style.setProperty(
+          'color',
+          isDarkMode === false ? '#f8f8f8' : '#f8f8f8'
+        );
+      })();
+    </script>
     <title>Try Catch</title>
   </head>
   <body>
