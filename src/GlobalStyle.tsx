@@ -54,6 +54,12 @@ table {
   border-spacing: 0;
 }
 
+ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
