@@ -50,7 +50,7 @@ const Wrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 30px;
+  padding: 50px 30px;
   color: ${(props) => props.theme.colors.content};
 `;
 
