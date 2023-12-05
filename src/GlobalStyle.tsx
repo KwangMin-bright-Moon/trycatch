@@ -84,7 +84,6 @@ body {
   height: 100%;
   max-width: 500px;
   overflow: hidden;
-  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   -webkit-box-shadow: ${(props) => props.theme.colors.webkitBoxShadow};

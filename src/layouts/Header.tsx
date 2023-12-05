@@ -42,9 +42,10 @@ export default function Header({ setTheme }: Props) {
 }
 
 const Wrapper = styled.header`
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
+  max-width: 500px;
   z-index: 1000;
   height: 5rem;
   display: flex;
