@@ -36,6 +36,8 @@ export default function Footer() {
 
 const Wrapper = styled.footer`
   background-color: ${(props) => props.theme.colors.background};
+  transition: background-color 0.5s, color 0.5s;
+
   width: 100%;
   height: 6rem;
   border-top-right-radius: 30px;
