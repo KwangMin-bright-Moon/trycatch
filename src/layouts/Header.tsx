@@ -61,5 +61,6 @@ const Title = styled.h1`
 `;
 
 const Button = styled.button<{ $isLast?: boolean }>`
-  margin-right: ${(props) => (props.$isLast ? '0' : '1rem')};
+  margin-right: ${(props) => (props.$isLast ? '0' : '1.5rem')};
+  font-size: ${(props) => props.theme.fonts.medium};
 `;

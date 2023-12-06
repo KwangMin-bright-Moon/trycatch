@@ -21,7 +21,6 @@ export function DarkModeProvider({ children }: Props) {
       localStorage.theme === 'dark' ||
       (!('theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches);
-    console.log(localStorage.theme === 'dark');
 
     setDarkMode(isDark);
     updateDarkMode(isDark);

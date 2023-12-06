@@ -4,7 +4,6 @@ import SearchIcon from '../components/ui/icons/SearchIcon';
 import ChartIcon from '../components/ui/icons/ChartIcon';
 import SettingsIcon from '../components/ui/icons/SettingsIcon';
 import { useState } from 'react';
-import MinusIcon from '../components/ui/icons/MinusIcon';
 import PlusIcon from '../components/ui/icons/PlusIcon';
 
 export default function Footer() {
@@ -19,9 +18,15 @@ export default function Footer() {
         <SearchIcon />
         <Text>Search</Text>
       </NavItem>
-      <Button onClick={() => setIsClicked((prev) => !prev)}>
-        {isClicked ? <MinusIcon /> : <PlusIcon />}
-      </Button>
+      <EmptyDib>
+        <Button
+          onClick={() => setIsClicked((prev) => !prev)}
+          $isClicked={isClicked}
+        >
+          <PlusIcon />
+        </Button>
+      </EmptyDib>
+
       <NavItem>
         <ChartIcon />
         <Text>Insights</Text>
@@ -35,17 +40,18 @@ export default function Footer() {
 }
 
 const Wrapper = styled.footer`
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) => props.theme.colors.backgroundSecondary};
   transition: background-color 0.5s, color 0.5s;
-
   width: 100%;
   height: 6rem;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 20px;
+  box-shadow: ${(props) => props.theme.colors.boxShadow};
+  -webkit-box-shadow: ${(props) => props.theme.colors.webkitBoxShadow};
+  -moz-box-shadow: ${(props) => props.theme.colors.mozBoxShadow};
 `;
 
 const NavItem = styled.div`
@@ -56,16 +62,23 @@ const NavItem = styled.div`
   gap: 4px;
 `;
 
+const EmptyDib = styled.div`
+  position: relative;
+`;
+
 const Text = styled.span`
   font-size: ${(props) => props.theme.fonts.small};
 `;
 
-const Button = styled.button`
-  background-color: #8e87eb;
-  color: ${(props) => props.theme.colors.content};
+const Button = styled.button<{ $isClicked?: boolean }>`
+  background-color: ${(props) => props.theme.colors.primary200};
+  color: ${(props) => props.theme.colors.white};
   font-size: 50px;
   padding: 10px;
   border-radius: 100%;
-  position: relative;
-  top: -30px;
+  position: absolute;
+  top: -55px;
+  left: 15px;
+  transform: ${(props) => (props.$isClicked ? 'rotate(45deg)' : 'rotate(0)')};
+  transition: all 0.3s ease-in-out;
 `;
