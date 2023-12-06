@@ -73,12 +73,17 @@ const Text = styled.span`
 const Button = styled.button<{ $isClicked?: boolean }>`
   background-color: ${(props) => props.theme.colors.primary200};
   color: ${(props) => props.theme.colors.white};
-  font-size: 50px;
+  font-size: 40px;
+  width: 70px;
+  height: 70px;
   padding: 10px;
   border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: -55px;
-  left: 15px;
+  left: 0px;
   transform: ${(props) => (props.$isClicked ? 'rotate(45deg)' : 'rotate(0)')};
   transition: all 0.3s ease-in-out;
 `;
