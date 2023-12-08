@@ -22,4 +22,5 @@ export default function Layout({ setTheme, children }: Props) {
 const Content = styled.section`
   flex: 1 1 auto;
   overflow-y: auto;
+  margin-top: 5rem;
 `;
