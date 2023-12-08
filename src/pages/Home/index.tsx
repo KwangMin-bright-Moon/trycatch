@@ -1,3 +1,7 @@
+import styled from 'styled-components';
+
 export default function HomePage() {
-  return <div>HomePage</div>;
+  return <Wrapper>hi</Wrapper>;
 }
+
+const Wrapper = styled.div``;

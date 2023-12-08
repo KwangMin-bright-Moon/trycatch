@@ -5,19 +5,24 @@ import ChartIcon from '../components/ui/icons/ChartIcon';
 import SettingsIcon from '../components/ui/icons/SettingsIcon';
 import { useState } from 'react';
 import PlusIcon from '../components/ui/icons/PlusIcon';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const [isClicked, setIsClicked] = useState(false);
   return (
     <Wrapper>
-      <NavItem>
-        <HomeIcon />
-        <Text>Home</Text>
-      </NavItem>
-      <NavItem>
-        <SearchIcon />
-        <Text>Search</Text>
-      </NavItem>
+      <Link to={`/`}>
+        <NavItem>
+          <HomeIcon />
+          <Text>Home</Text>
+        </NavItem>
+      </Link>
+      <Link to={`/search`}>
+        <NavItem>
+          <SearchIcon />
+          <Text>Search</Text>
+        </NavItem>
+      </Link>
       <EmptyDib>
         <Button
           onClick={() => setIsClicked((prev) => !prev)}
@@ -27,14 +32,18 @@ export default function Footer() {
         </Button>
       </EmptyDib>
 
-      <NavItem>
-        <ChartIcon />
-        <Text>Insights</Text>
-      </NavItem>
-      <NavItem>
-        <SettingsIcon />
-        <Text>Settings</Text>
-      </NavItem>
+      <Link to={`/insights`}>
+        <NavItem>
+          <ChartIcon />
+          <Text>Insights</Text>
+        </NavItem>
+      </Link>
+      <Link to={`/settings`}>
+        <NavItem>
+          <SettingsIcon />
+          <Text>Settings</Text>
+        </NavItem>
+      </Link>
     </Wrapper>
   );
 }

@@ -42,8 +42,6 @@ export default function Header({ setTheme }: Props) {
 }
 
 const Wrapper = styled.header`
-  position: fixed;
-  top: 0;
   width: 100%;
   max-width: 500px;
   z-index: 1000;

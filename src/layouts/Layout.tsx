@@ -2,16 +2,18 @@ import { DefaultTheme } from 'styled-components/dist/types';
 import Header from './Header';
 import styled from 'styled-components';
 import Footer from './Footer';
+import { ReactNode } from 'react';
 
 type Props = {
   setTheme: React.Dispatch<React.SetStateAction<DefaultTheme>>;
+  children: ReactNode;
 };
 
-export default function Layout({ setTheme }: Props) {
+export default function Layout({ setTheme, children }: Props) {
   return (
     <>
       <Header setTheme={setTheme} />
-      <Content></Content>
+      <Content>{children}</Content>
       <Footer />
     </>
   );
