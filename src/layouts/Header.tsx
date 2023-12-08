@@ -52,7 +52,9 @@ const Wrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 50px 30px;
+  background-color: ${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.content};
+  transition: background-color 0.5s, color 0.5s;
 `;
 
 const Title = styled.h1`
